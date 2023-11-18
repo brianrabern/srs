@@ -15,10 +15,10 @@ services:
       context: .
       dockerfile: Dockerfile.db
     environment:
-      MYSQL_ROOT_PASSWORD: bdr1120
+      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: srsdb
-      MYSQL_USER: brianrabern
-      MYSQL_PASSWORD: bdr1120
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
     volumes:
       - mariadb_data:/var/lib/mysql
 

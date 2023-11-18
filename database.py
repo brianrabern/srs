@@ -1,24 +1,15 @@
-# import mariadb
 import mysql.connector
 from hash import generate_uuid
 import time
-from tenacity import retry, wait_fixed, stop_after_attempt
 
-
-@retry(wait=wait_fixed(2), stop=stop_after_attempt(3))
-def connect_to_database():
-    connection = mysql.connector.connect(
-        user="brianrabern",
-        password="bdr1120",
-        host="db",
-        # host="127.0.0.1",
-        port=3306,
-        database="srsdb",
-    )
-    return connection
-
-
-connection = connect_to_database()
+connection = mysql.connector.connect(
+    user="admin",
+    password="password",
+    host="db",  # if using docker-compose
+    # host="127.0.0.1",  # if using local mariadb
+    port=3306,
+    database="srsdb",
+)
 
 
 def get_all():
